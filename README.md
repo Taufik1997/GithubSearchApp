@@ -36,6 +36,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Testing
 
+Before trying to run the unit tests, make sure the target framework is .Net 8
+
 To run the unit tests for this project:
 
 - Navigate to the ASAssessmentTests directory.
