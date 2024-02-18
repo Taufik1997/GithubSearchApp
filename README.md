@@ -1,44 +1,43 @@
-#GitHubSearcher 
+# GitHubSearcher
 
-Overview
+## Overview
 
 GitHubSearcher is a dynamic web application designed to facilitate the search of GitHub users. It provides a user-friendly interface for accessing and displaying the top 5 repositories of any given GitHub user based on the number of stargazers.
 
-Key Features
+## Key Features
 
-User Search: Efficiently search for GitHub users using their usernames.
-Repository Showcase: Displays the top 5 repositories of a user, sorted by the number of stargazers.
-Intuitive UI: A clean and responsive user interface ensures a seamless user experience.
+- **User Search**: Efficiently search for GitHub users using their usernames.
+- **Repository Showcase**: Displays the top 5 repositories of a user, sorted by the number of stargazers.
+- **Intuitive UI**: A clean and responsive user interface ensures a seamless user experience.
 
-Technologies Used
+## Technologies Used
 
-Ninject: An efficient dependency injector for managing project dependencies.
-Moq: A powerful library for mocking in unit tests, ensuring robust and reliable testing.
+- **Ninject**: An efficient dependency injector for managing project dependencies.
+- **Moq**: A powerful library for mocking in unit tests, ensuring robust and reliable testing.
 
-Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
+### Prerequisites
 
-.NET Framework 4.8.1
+- .NET Framework 4.8.1
+- .NET 8.0
 
-.NET 8.0
+### Installation
 
-Installation
+- Clone the repository
 
-Clone the repository
+- Ensure you have the .NET Framework 4.8.1 and .NET 8.0 installed on your machine.
 
-Ensure you have the .NET Framework 4.8.1 and .NET 8.0 installed on your machine.
+- Build and Run
 
-Build and Run
+- Open the solution in Visual Studio and build the project. Run the application to start using GitHubSearcher.
 
-Open the solution in Visual Studio and build the project. Run the application to start using GitHubSearcher.
-
-Testing
+### Testing
 
 To run the unit tests for this project:
 
-Navigate to the ASAssessmentTests directory.
+- Navigate to the ASAssessmentTests directory.
 
-Execute the test suite using a suitable test runner for .NET.
+- Right click on the service needed testing and click on "Run Tests".
