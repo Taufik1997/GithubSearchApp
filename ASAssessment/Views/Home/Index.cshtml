@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Github User Searcher";
+}
+
+<style>
+    .search-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .search-container .form-control {
+        margin-right: 10px; 
+    }
+</style>
+
+<main>
+    <section class="row" aria-labelledby="searchGitHubUserTitle">
+        <h1 id="searchGitHubUserTitle">Search GitHub User</h1>
+        <p class="lead">Enter a GitHub username to retrieve user details and repositories.</p>
+
+        @using (Html.BeginForm("SearchUser", "Home", FormMethod.Post, new { @class = "search-container" }))
+        {
+            <input type="text" class="form-control" id="username" name="username" placeholder="GitHub Username" required>
+            <button type="submit" class="btn btn-primary">Search</button>
+        }
+    </section>
+</main>
+

@@ -1,0 +1,56 @@
+﻿@model ASAssessment.Models.GitHubUserViewModel
+
+@{
+    ViewBag.Title = "GitHub User Details";
+}
+
+<main>
+    <section>
+        <h2>GitHub User Details</h2>
+
+        @if (Model != null)
+        {
+            <div>
+                <h3>@Model.User.Username</h3>
+                <p><strong>Location:</strong> @Model.User.Location</p>
+                <img src="@Model.User.AvatarUrl" alt="Avatar" style="width:100px;height:100px;" />
+            </div>
+
+            <h3>Repositories</h3>
+
+            if (Model.Repositories.Any())
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Stargazers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var repo in Model.Repositories.OrderByDescending(r => r.StargazersCount).Take(5))
+                        {
+                            <tr>
+                                <td><a href="@repo.HtmlUrl" target="_blank">@repo.Name</a></td>
+                                <td>@repo.Description</td>
+                                <td>@repo.StargazersCount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-info" role="alert">
+                    <p>No repositories found for user: @Model.User.Username.</p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>User details not found.</p>
+        }
+    </section>
+</main>
+
