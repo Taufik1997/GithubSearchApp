@@ -39,7 +39,7 @@ namespace ASAssessment.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error while retrieving Github User with username: {username}",ex);
+                throw new Exception($"Error while retrieving Github User with username: {username}, {ex.Message}",ex);
             }
         }
     }

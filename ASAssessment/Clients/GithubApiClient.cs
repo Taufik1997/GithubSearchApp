@@ -28,7 +28,7 @@ public class GithubApiClient : IGithubApiClient
             var errorMessage = await response.Content.ReadAsStringAsync();
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                throw new Exception("Requested resource not found. " + errorMessage);
+                throw new Exception("The requested username could not be found. Please check the username for accuracy and try again.");
             }
             else
             {
@@ -39,11 +39,13 @@ public class GithubApiClient : IGithubApiClient
 
     public async Task<GithubUser> GetUserDetails(string username)
     {
-        return await SendRequestAndProcessResponse<GithubUser>($"users/{username}").ConfigureAwait(false);
+        return await SendRequestAndProcessResponse<GithubUser>($"users/{username}")
+            .ConfigureAwait(false);
     }
 
     public async Task<List<GithubRepository>> GetUserRepositories(string reposUrl)
     {
-        return await SendRequestAndProcessResponse<List<GithubRepository>>(reposUrl).ConfigureAwait(false);
+        return await SendRequestAndProcessResponse<List<GithubRepository>>(reposUrl)
+            .ConfigureAwait(false);
     }
 }

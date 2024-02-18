@@ -61,7 +61,7 @@ namespace ASAssessment.Tests
         {
             #region Arrange
             var username = "testUser";
-            var nullLocationString = "Location not available.";
+            var nullLocationResult = "Location not available.";
 
             var mockUserInformation = new GithubUser
             {
@@ -88,7 +88,7 @@ namespace ASAssessment.Tests
 
             Assert.IsNotNull(result);
             Assert.AreEqual(mockUserInformation, result.User);
-            Assert.AreEqual(nullLocationString, result.User.Location);
+            Assert.AreEqual(nullLocationResult, result.User.Location);
             Assert.AreEqual(mockRepositories, result.Repositories);
 
             #endregion Assert
