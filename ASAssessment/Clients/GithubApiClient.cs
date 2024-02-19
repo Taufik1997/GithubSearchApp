@@ -27,13 +27,9 @@ public class GithubApiClient : IGithubApiClient
         {
             var errorMessage = await response.Content.ReadAsStringAsync();
             if (response.StatusCode == HttpStatusCode.NotFound)
-            {
-                throw new Exception("The requested username could not be found. Please check the username for accuracy and try again.");
-            }
+                throw new Exception($"The requested resource of type '{typeof(T).Name}' could not be found. Please check the provided value for accuracy and try again.");
             else
-            {
                 throw new Exception($"Error occurred: {response.StatusCode} - {errorMessage}");
-            }
         }
     }
 
