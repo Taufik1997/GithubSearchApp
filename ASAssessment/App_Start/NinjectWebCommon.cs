@@ -52,6 +52,7 @@ namespace YourAppName.App_Start
             // Services
             kernel.Bind<IGithubService>().To<GithubService>();
             kernel.Bind<IGithubApiClient>().To<GithubApiClient>();
+            kernel.Bind<IGithubHttpClient>().To<GithubHttpClient>();
 
         }
     }
